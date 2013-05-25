@@ -1,0 +1,574 @@
+\documentclass{beamer}
+
+%% DOCUMENTATION
+% http://www2.informatik.hu-berlin.de/~mischulz/beamer.html
+% ftp://ftp.mpi-sb.mpg.de/pub/tex/mirror/ftp.dante.de/pub/tex/macros/latex/contrib/beamer/doc/beameruserguide.pdf
+% ftp://dante.ctan.org/tex-archive/help/Catalogue/entries/prosper.html
+% http://en.wikibooks.org/wiki/LaTeX/Presentations
+
+%% HINTS
+% http://www.disk0s1.de/posts/latex/beamer-und-fill/
+
+%% PACKAGES
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,multirow,hyperref}
+% http://en.wikibooks.org/wiki/LaTeX/Tables
+\usepackage{array} % table
+
+%% STYLE
+% http://deic.uab.es/~iblanes/beamer_gallery/index.html
+\usetheme{Frankfurt}
+\usecolortheme{rose}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamercovered{transparent}
+\useoutertheme[subsection=false]{smoothbars}
+\useinnertheme{rectangles}
+% colors
+\definecolor{up}{HTML}{E5CF83}
+\definecolor{middle}{HTML}{67B821}
+\definecolor{low}{HTML}{B3DB10}
+\setbeamercolor{titlelike}{fg=black, bg=low}
+\setbeamercolor{frametitle}{fg=black, bg=low}
+\setbeamercolor{subsection in head/foot}{fg=black, bg=middle}
+
+%% TITLEPAGE
+\title[YAVA]{YAVA: Yet Another Vegan App}
+\author[Y. Haupenthal]{Yannic Haupenthal}
+\institute[UdS]{Universität des Saarlandes}
+\date[23.05.2013]{23. Mai 2013}
+\subject{YAVA}
+\keywords{vegan, app, yava}
+
+%% FIXES
+% Footnote: numbers instead of letters
+% http://tex.stackexchange.com/questions/68887/how-do-i-change-footnote-in-beamer
+\renewcommand\thempfootnote{\arabic{mpfootnote}}
+
+%% PICTURES
+% Leider sind fast alle Bilder auskommentiert, da ich nicht die Rechte
+% an diesen besitze.
+
+%% ACTUAL PRESENTATION
+\begin{document}
+
+% Title
+\frame{
+	\titlepage
+}
+
+% Fundamentals
+\begin{frame}{Grundlagen}
+		\begin{block}{(Ovo-Lacto-)Vegetarismus}
+		- Ernährungsweise\\
+		- schließt Verzehr von Lebewesen aus\\
+		- tierische ``Produkte'' nicht unbedingt (z.\,B. Milch, Ei,
+		Honig)
+	\end{block}
+
+	\begin{block}{Veganismus}
+		- Lebenseinstellung\\
+		- schließt Verzehr aller tierischen ``Produkte'' aus\\
+		- lehnt Nutzung von Tieren ab
+	\end{block}
+
+	\begin{block}{Veganität}
+		bezeichnet wie bzw. ob etwas vegan ist
+	\end{block}
+\end{frame}
+
+% Overview
+\frame{
+	\frametitle{Übersicht}
+	\tableofcontents
+}
+
+% Motivation
+\section{Motivation}
+\subsection*{Inhaltsstoffe}
+\begin{frame}{Inhaltsstoffe}
+	\vskip0pt plus 1filll
+	\begin{center}
+		% Quelle: siehe unten
+%		\includegraphics<1>[scale=0.15]{pics/ingredients9.jpg}
+		% Quelle: siehe unten + Modifizierungen mit GIMP
+%		\includegraphics<2>[scale=0.15]{pics/ingredients9-2.jpg}
+	\end{center}
+
+	\begin{itemize}
+		\item Namensunklarheit, z.\,B. E-Nummern, chemische
+				Bezeichnungen, CI
+		\item Fremdsprachen, z.\,B. Englisch, Latein, Französisch
+	\end{itemize}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle: \url{http://beautyjagd.de/2011/02/23/m-a-c-lidschatten-unflappable-aus-der-peacocky-le/}}
+\end{frame}
+
+\begin{frame}{Veganität?}
+	\vskip0pt plus 1filll
+
+	\begin{columns}
+		\column{.6\textwidth}
+			\begin{center}
+			Aroma,\\
+			Lecithin,
+			Milchsäure,\\
+			Mono- und Diglyceride von
+			Speisefettsäuren, ...
+	\end{center}
+		\column{.4\textwidth}
+			\begin{center}
+				% Quelle: siehe unten
+%				\includegraphics[scale=0.25]{pics/P_ChipsFunnyFrisch_Zutaten.jpg}
+			\end{center}
+	\end{columns}
+
+	\begin{block}{Aroma}
+		Ausgangsmaterialien für die Herstellung können pflanzlichen,
+		tierischen oder mikrobiologischen (z. B. Hefen) Ursprungs
+		sein\,\footnote{\,\url{http://de.wikipedia.org/wiki/Aroma\#Aromastoffe}}
+	\end{block}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{http://www.lebensmittelklarheit.de/cps/rde/xchg/lebensmittelklarheit/hs.xsl/2530.htm}}
+\end{frame}
+
+\subsection*{Herstellung}
+\begin{frame}{Herstellungsprozess}
+	\vskip0pt plus 1filll
+	\begin{columns}[c]
+		\column{0.4\textwidth}
+			\centering
+			% Quelle: siehe unten
+%			\includegraphics[scale=0.1]{pics/5010.10.jpg}
+		\column{0.6\textwidth}
+			Schönung bzw. Klärung von Getränken
+	\end{columns}
+	\begin{columns}[c]
+		\column{0.6\textwidth}
+			Gelatine als Trägerstoff für Vitamine
+		\column{0.4\textwidth}
+			\centering
+			% Quelle: siehe unten
+%			\includegraphics[scale=0.2]{pics/716740_1_1_detail.jpg}
+	\end{columns}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen:
+			\url{http://www.delinat.com/weine/5010.12.html}, 
+	\url{http://www.real-drive.de/isernhagen/product/716740_1_1/Hohes+C+Multivitaminsaft}}
+\end{frame}
+
+\subsection*{Unfreiheit}
+\begin{frame}{Daten}
+	\vskip0pt plus 1filll
+	\begin{columns}[c]
+		\column{0.6\textwidth}
+			\begin{itemize}
+				\item GS1 verwaltet und vergibt GTINs im Einzelhandel
+				\item Herausgabe der Herstellerinformationen erfolgt nur durch eingeschränkte API
+			\end{itemize}
+		\column{0.4\textwidth}
+			\centering
+			% Quelle: siehe unten (500px-Version)
+%			\includegraphics[scale=0.15]{pics/{500px-Logo_GS1.svg}.png}
+	\end{columns}
+
+	\begin{alertblock}{}
+		Aktuell gibt es keine freien Zutatenlisten\\
+		$\rightarrow$ Closed Data
+	\end{alertblock}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{http://de.wikipedia.org/wiki/Datei:Logo_GS1.svg}}
+\end{frame}
+
+\section{Verwandte Arbeiten}
+\subsection*{related-work}
+\begin{frame}{Barcoo}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.60\textwidth}
+			{\large Größter Produkt-Guide in Europa}
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten (500px-Version)
+%			\includegraphics[scale=0.2]{pics/{500px-Barcoo_logo.svg}.png}
+	\end{columns}
+
+	\begin{exampleblock}{}
+		+ benutzt vegane Daten von ``Rezeptefuchs''\\
+		+ plattformunabhängig
+	\end{exampleblock}
+
+	\begin{alertblock}{}
+		- keine Zutaten\\
+		- kein Userinput\\
+		- unfrei
+	\end{alertblock}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{https://de.wikipedia.org/wiki/Datei:Barcoo_logo.svg}}
+\end{frame}
+
+\begin{frame}{das-ist-drin}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.60\textwidth}
+			{\large Online-Verbraucherportal rund um Inhalts- und Zusatzstoffe
+			von Lebensmitteln}
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten (300dpi, CMYK, JPEG)
+%			\includegraphics{pics/{das-ist-drin.de_logo_cmyk}.jpg}
+	\end{columns}
+	
+	\begin{exampleblock}{}
+		+ enthält Daten zur Veganität\\
+		+ Zutatenauflistung
+	\end{exampleblock}
+
+	\begin{alertblock}{}
+		- Veganität nur auf der Website\\
+		- nicht plattformunabhängig\\
+		- unfrei\\
+	\end{alertblock}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{http://das-ist-drin.de/ueber-uns/presse/pressematerial/}}
+\end{frame}
+
+\begin{frame}{EuLa-Armband}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.60\textwidth}
+			{\large Einkaufunterstützendes Lebensmittelallergiker-Armband}
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten
+%			\includegraphics[scale=0.1]{pics/eula-prototyp.png}
+	\end{columns}
+
+	\begin{exampleblock}{}
+		+ RFID statt Barcode\\
+		+ Fokus auf Allergien
+	\end{exampleblock}
+	
+	\begin{alertblock}{}
+		- Daten nicht veränderbar\\
+		- keine veganen Angaben\\
+		- unfrei\\
+		- nicht plattformunabhängig
+	\end{alertblock}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen:
+	\url{http://kola.opus.hbz-nrw.de/volltexte/2007/180/pdf/Diplomarbeit-RFID_Lebensmittelallergie.pdf}}\\
+	Bretz, A. (2007). \textbf{RFID als Technik für Mobile Health bei
+	Lebensmittelallergikern.}
+\end{frame}
+
+\begin{frame}{WikiFood}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.60\textwidth}
+		{\large Website innerhalb des Projekts MENSSANA (Mobile Expert and Networking System for Systematical
+		Analysis of Nutrition-based Allergies)}
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten
+%			\includegraphics[scale=0.5]{pics/23Logo.png}
+	\end{columns}
+
+	\begin{exampleblock}{}
+		+ Fokus auf Allergien\\
+		+ Veganangaben in Arbeit
+	\end{exampleblock}
+	
+	\begin{alertblock}{}
+		- unfrei\\
+		- nicht plattformunabhängig
+	\end{alertblock}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen:
+	\url{http://www.wikifood.eu/wikifood/en/struts/welcome.do}}\\
+	Arens, A., Rösch, N., Feidert, F., Harpes, P., Herbst, R., \&
+	Mösges, R. \textbf{Mobile electronic patient diaries with barcode based
+	food identification for the treatment of food allergies.} \textit{GMS Med.
+	Inform. Biom. Epidemiol, 4(3).}
+\end{frame}
+
+\section{Ziel}
+\subsection*{Ziel}
+\begin{frame}{Ziel}
+	\vskip0pt plus 1filll
+	\begin{exampleblock}{}
+		Freie, plattformübergreifende, vegane Produktdatenbank und
+		Informationsplattform
+	\end{exampleblock}
+	\vskip0pt plus 1filll
+\end{frame}
+
+\begin{frame}{Veganismus}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.60\textwidth}
+			\centering
+			Veganismus im Fokus\\
+			$\rightarrow$ ``Ist das Produkt tatsächlich vegan?''
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten (500px-Version)
+%			\includegraphics[scale=0.3]{pics/{500px-Veganismus_logo.svg}.png}
+	\end{columns}
+	
+	\begin{block}{}
+		wie ``Allergiewarner'', nur mit ethischem Hintergrund
+	\end{block}
+	
+	\begin{alertblock}{}
+		Wenn Gesetz geändert wird, kann dieser Ansatz für andere
+		Ansätze verwendet werden
+	\end{alertblock}
+	
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{http://de.wikipedia.org/wiki/Datei:Veganismus_logo.svg}}
+\end{frame}
+
+\begin{frame}{Gemeinfreiheit}
+	\vskip0pt plus 1filll
+		\begin{columns}
+		\column{.60\textwidth}
+			(fast) alle Daten gemeinfrei erhältlich\\
+			$\rightarrow$ Open Data
+		\column{.40\textwidth}
+			\centering
+			% Quelle: siehe unten
+%			\includegraphics[scale=0.1]{pics/{zero.large}.png}
+	\end{columns}
+	\vskip0pt plus 1filll
+	\begin{block}{CC0 1.0 Universell (CC0 1.0) - Public Domain Dedication}
+		Sie dürfen das Werk/den Inhalt kopieren, verändern, verbreiten
+		und aufführen, sogar zu kommerziellen Zwecken, ohne um weitere
+		Erlaubnis bitten zu
+		müssen.\,\footnote{\,\url{http://creativecommons.org/publicdomain/zero/1.0/deed.de}}
+	\end{block}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle: \url{http://creativecommons.org/about/downloads}}
+\end{frame}
+
+\begin{frame}{Plattformunabhängigkeit}
+	\vskip0pt plus 1filll
+	Webanwendung
+
+	\begin{center}
+		% Quelle: siehe unten
+%		\includegraphics[scale=0.08]{pics/browser-logos-banner.png}
+	\end{center}
+
+	Mobile App
+
+	\begin{center}
+		% Quelle: siehe unten (modifiziert)
+%		\includegraphics[scale=0.3]{pics/Build-Diagram-3.png}
+	\end{center}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen:
+			\url{http://www.thekuroko.com/the-browser-is-where-its-at/},
+	\url{http://phonegap.com/about/artwork/}}
+\end{frame}
+
+\section{Konzept}
+\subsection*{Konzept}
+\begin{frame}{Aufbau}
+	\vskip0pt plus 1filll
+		% Quellen: siehe unten. Zusaetzlich noch Bilder (Pfeil, Barcode)
+		% und Texte von mir
+%		\includegraphics[scale=0.15]{pics/konzept.png}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen:
+	\url{http://www.minecraftwiki.net/wiki/File:Smartphone.svg},
+	\url{https://www.google.com/intl/en/chrome/browser/features.html\#security},
+	\url{https://commons.wikimedia.org/wiki/File:Database.svg}}
+\end{frame}
+
+\begin{frame}{Aufbau}
+	\begin{itemize}
+		\item Eintragung bzw. Veränderung von Daten nach Anmeldung mit
+				OpenID möglich
+		\item Jede Eintragung gibt Punkte\\
+			$\rightarrow$ ``spielerisch'' die Datenbank füllen
+		\item Daten (keine persönlichen) können per API/Dump
+				heruntergeladen werden
+	\end{itemize}
+\end{frame}
+
+\subsection*{Veganität}
+\begin{frame}{Veganität (Berechnung)}
+	\vskip0pt plus 1filll
+	\centering
+		% Quellen: Veganismus Logo (siehe oben) und
+		% Rahmen/Beschriftungen von mir
+%		\includegraphics[scale=0.2]{pics/veganitaet.png}
+	\vskip0pt plus 1filll
+\end{frame}
+
+\begin{frame}{Veganität (Anzeige)}
+	\vskip0pt plus 1filll
+	\textbf{Noname Chips}\\
+	Zutaten: Kartoffeln, Sonnenblumenöl, Salz, Aroma\\
+	\begin{tabular}[b]{ c b{.8\textwidth} }
+		% Quellen: Veganismus Logo (siehe oben) modifiziert und
+		% exportiert
+%		\includegraphics[scale=0.05]{pics/veganismus_logo_vegan.png}
+		& Dieses Produkt ist von den Zutaten her vegan.\\
+%		\includegraphics[scale=0.05]{pics/veganismus_logo_unsure.png}
+		& Dieses Produkt hat noch keine Produktanfrage/Quelle.\\
+%		\includegraphics[scale=0.05]{pics/veganismus_logo_unvegan.png}
+		& Dieses Produkt wurde durch einen Kommentar als unvegan
+		markiert.
+	\end{tabular}
+	\vskip0pt plus 1filll
+\end{frame}
+
+\section{Implementierung}
+\subsection*{Webanwendung}
+\begin{frame}{Webanwendung}
+	\vskip0pt plus 1filll
+		\begin{columns}
+			\column{.3\textwidth}
+				\centering
+				% Quellen: siehe unten (Suche benutzen, jeweil
+				% 500px-Version)
+% 				\includegraphics[scale=0.1]{pics/{500px-HTML5_logo.svg}.png}\\
+% 				\includegraphics[scale=0.1]{pics/{500px-CSS.svg}.png}\\
+% 				\includegraphics[scale=0.1]{pics/{500px-Javascript_icon.svg}.png}
+			\column{.3\textwidth}
+				\centering
+%				\includegraphics[scale=0.1]{pics/{500px-Ruby_on_Rails.svg}.png}
+			\column{.3\textwidth}
+				\centering
+%				\includegraphics[scale=0.1]{pics/{500px-Postgresql_elephant.svg}.png}
+		\end{columns}
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen: \{commons,de,en\}.wiki\{pedia,media\}.org}
+\end{frame}
+
+%\subsection*{Phonegap}
+\subsection*{Apps}
+\begin{frame}{Apps (allgemein)}
+	\vskip0pt plus 1filll
+	\begin{center}
+		% Quelle: siehe unten
+%		\includegraphics[scale=0.2]{pics/Build-Diagram-2.png}
+	\end{center}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quelle:
+	\url{http://phonegap.com/about/artwork/}}
+\end{frame}
+
+\begin{frame}{Apps (YAVA)}
+	\vskip0pt plus 1filll
+	\begin{columns}
+		\column{.6\textwidth}
+			\begin{exampleblock}{Online}
+				Nutzung der mobilen Website
+			\end{exampleblock}
+			\begin{block}{Offline}
+				Schlanke Website mit SQLite-Datenbank\\
+				Zuordnung: GTIN $\rightarrow$ Veganität
+			\end{block}
+		\column{.4\textwidth}
+			\centering
+			% Quelle: siehe oben (exportiert aus SVG)
+%			\includegraphics[scale=0.2]{pics/smartphone.png}
+	\end{columns}
+	\vskip0pt plus 1filll
+\end{frame}
+
+\begin{frame}{Apps (IRL)}
+	\vskip0pt plus 1filll
+	{\large Innovative Retail Laboratory}
+	\begin{columns}
+		\column{.6\textwidth}
+			\begin{block}{Offline}
+				Schlanke Website mit Bild, Name und Veganität mit
+				Testdaten in SQLite-Datenbank
+			\end{block}
+		\column{.4\textwidth}
+			\centering
+			% Quelle: das Logo wurde mir freundlicherweise zur
+			% freien Verfuegung gestellt (d.h. gemeinfrei nutzbar)
+			\includegraphics[scale=0.1]{pics/irl.png}
+	\end{columns}
+
+	\vskip0pt plus 1filll
+	\par\hrulefill\par
+	\tiny{Quellen: \url{http://www.innovative-retail.de/}}\\
+	Spassova, L., Schöning, J., Kahl, G., \& Krüger, A. (2009).
+	\textbf{Innovative retail laboratory.} In \textit{Roots for the Future of Ambient
+	Intelligence. European Conference on Ambient Intelligence
+	(AmI-2009), oA, Salzburg, Austria (November 2009).}
+\end{frame}
+
+\section{Ausblick}
+\subsection*{futurework}
+\begin{frame}{Ausblick}
+	\begin{itemize}
+		\item Orientierungshilfe
+		\item Verwendung von Augmented Reality
+		\item Dezentralisierung (z.\,B. mithilfe des P2P
+				Frameworks\,\footnote{\,\url{http://p2pframework.com/}})
+		\item API für Hersteller*innen zum Eintragen der Daten
+		\item Unterstützung von Pharmaka bzw. Medikamenten
+		\item Einbindung von weiteren Diensten
+		\begin{itemize}
+			\item Testberichte
+			\item Preisvergleiche
+			\item Öko- und Gesundheitsinformationen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% don't include the following frames in the header (smoothbars)
+% -> define another part
+\part{End}
+
+%% End %%
+
+% Thanks
+\begin{frame}{Vielen Dank ...}
+\begin{center}
+	... für eure Aufmerksamkeit!
+\end{center}
+\end{frame}
+
+% Questions
+\begin{frame}{Fragen}
+\begin{center}
+	% Quelle: selbst gemalt
+	\includegraphics[scale=0.2]{pics/qm.png}
+\end{center}
+\end{frame}
+
+\end{document}

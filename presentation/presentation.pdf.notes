@@ -1,0 +1,282 @@
+{{{ 1
+%% Title
+
+	Herzlich willkommen
+	Bachelorarbeit Name YAVA, ein Akronym fuer ...
+
+->	Wie der Titel schon verraet, geht es um einen Dienst
+	fuer vegan lebende Menschen, deswegen vor der Uebersicht erst einmal Grundlagen
+}}}
+
+{{{ 2
+%% Grundlagen
+
+	gleicher Stand fuer alle
+	Begriffe, die im weiteren Verlauf wichtig sind
+}}}
+
+{{{ 3
+%% Uebersicht
+
+-> Veganer*in im Supermarkt, uebliches Produkt ...
+}}}
+
+{{{ 4
+% Motivation
+%% Inhaltsstoffe - 1
+
+	Zutatenliste
+
+	Namensunklarheit:
+	Karmin
+	E-Nummer: E-120
+	Colour Index: 75470
+
+	Chemische Bezeichnung: Phenoxyethanol
+
+	Fremdsprachen: Englisch (Beeswax), Latein (Cera alba),
+	Franzoesisch (Cire d'abeille)
+
+-> Ich habe einmal ...
+}}}
+
+{{{ 5
+% Motivation
+%% Inhaltsstoffe (Name) - 2
+
+<- ... beispielhaft die offensichtlichsten unveganen Zutaten
+	hervorgehoben
+
+-> Ein weiteres Problem ist, dass nicht immer der Ursprung der Zutaten klar
+}}}
+
+{{{ 6
+% Motivation
+%% Veganitaet?
+
+<- ... angegeben ist.
+
+	Z.B. Aroma, Milchsaeure, Lecithin, Mono- und Diglyceride von
+	Speisefettsaeuren und viele weitere
+
+	Anekdote: Funny Frisch + Foodwatch (Verbraucherschutzorganisation)
+}}}
+
+{{{ 7
+% Motivation
+%% Herstellungsprozess
+	um Truebstoffe aus Weinen oder Saeften herauszufiltern wird ...
+	zur Schoenung bzw. Klaerung eingesetzt
+	Schoenung durch Gelatine, Hausenblase, Eiklar in Weinen, Saeften
+	(O-/A-Saft) und Bieren (Guiness)
+
+	Traegerstoff z.b. bei multivitamfruchtsaeften
+	-> bessere Dosierung
+
+	All das sind Angaben, die nur ueber den*die Hersteller*in
+	erfahrbar sind
+
+	Normal wird all dies schon vor dem Einkauf ueberprueft oder
+	waehrend (umstaendlich mit google und langsamer verbindung).
+	-> PA
+
+-> Noch ein Problem ist die Unfreiheit der Daten
+}}}
+
+{{{ 8
+% Motivation
+%% Daten
+<- Die Organisation GS1 
+	GS1 = Global Standards One
+	GTIN = Global Trade Item Number
+
+-> Im Folgenden stelle ich andere Dienste vor, die ein aehnliches
+Konzept verfolgen
+}}}
+
+{{{ 9
+%% Verwandte Arbeiten
+% Barcoo
+<- Barcoo bez. sich selbst ...
+	checkitmobile GmbH
+	Rezeptefuchs erklaeren
+	Apps: ios, android, windows phone, bada, blackberry
+	testberichte, preisvergleiche usw.
+	kein userinput: keine produkte/zutaten
+}}}
+
+{{{ 10
+%% Verwandte Arbeiten
+% das-ist-drin
+	snoopmedia GmbH
+	android
+}}}
+
+{{{ 11
+%% Verwandte Arbeiten
+% EuLA
+	Diplomarbeit
+	Prototyp
+	Lebensmittelallergien
+	globale Datenbanken
+	hohe Sicherheitsstandards -> unfrei
+}}}
+
+{{{ 12
+%% Verwandte Arbeiten
+% WikiFood
+	Forschungszentrum Henri Tudor in L
+	-> Androidapp -> nicht crossplattform
+
+-> Im Gegensatz zu den vorgestellten Arbeiten ist mein Ziel ...
+}}}
+
+{{{ 13
+%% Ziel
+% Ziel
+<- ... eine ... aufzubauen.
+-> D.h. der ..
+}}}
+
+{{{ 14
+%% Ziel
+% Veganismus
+<- ... Veganismus soll im Vordergrund stehen
+	Frage ... soll sich eruebrigen
+	Allergiewarner wie der von Wikifood
+	Gesetz (Deklarationspflicht (unter 2%), Herstellungsprozess)
+	Ansaetze: E-Nummern, Roh, Bio, Fair, Pharmaka, tierversuchsfrei,
+	..
+	-> Ausblick (Future Work)
+	-> Fairphone: wo kommt was aus meinem smartphone her?
+}}}
+
+{{{ 15
+%% Ziel
+% Gemeinfreiheit
+	Problem: alle, die etwas aehnliches bauen wollen, muessen jedesmal
+	alles neu zusammensuchen (App-Entwickler*innen, vegane
+	Dienstbetreiber*innen,
+	Restaurants, ....)
+	Ziel: Sammelstelle fuer alle PAs
+	Code ebenfalls open source
+}}}
+
+{{{ 16
+%% Ziel
+% Plattformunabhaengigkeit
+	jeder Browser -> jedes OS
+	Chrome, Firefox, Opera, Safari, Internet Explorer
+
+	soviele mobile OS wie moeglich
+	iOS, Android, webOS, Windows Phone, Blackberry OS, Symbian, bada
+
+-> Wie soll das ganze aussehen?
+}}}
+
+{{{ 17
+%% Konzept
+% Aufbau
+<- meine mobile App soll nach Scan ...
+
+	Scan -> Datenbank -> Darstellung
+
+-> eine Eintragung ...
+}}}
+
+{{{ 18
+%% Konzept
+% Aufbau
+<- bzw. ...
+	OpenID: Twitter, Facebook, Google, ..
+	Spielidee -> Anreiz
+	gemeinfrei :)
+-> Der Hauptpunkt, die Veganitaet ...
+}}}
+
+{{{ 19
+%% Konzept
+% Veganitaet (Berechnung)
+<- wird bestimmt aus:
+	Veganitaet wird berechnet aus:
+	- Zutaten: alle Zutaten werden einzeln auf Veganitaet bestimmt.
+	  -> wenn Zutaten fehlen, kann Veganitaet natuerlich nicht
+	  bestimmt werden
+	- Produktanfragen/Quellen direkt von Hersteller*in
+	- Kommentare: wenn Produkt erneuert wurde, sonstige Bedenken
+	  bestehen bleiben
+-> wobei diese 3 Punkte nicht zusammengerechnet werden, sondern
+}}}
+
+{{{ 20
+%% Konzept
+% Veganitaet (Anzeige)
+<- untereinander dargestellt, wie hier ..
+	unvegan wie in der Motivation schon erwaehnt (Inhaltsstoffe)
+-> Die Implementierung besteht nun aus ...
+}}}
+
+{{{ 21
+%% Implementierung
+% Webanwendung
+<- einer Webapp und mobilen Apps, auf die ich gleich eingehe
+	Webapp:
+	HTML5, CSS3, Javascript (neueste Webstandards)
+	Ruby-on-Rails als Webframework
+	PostgreSQL als Datenbank
+
+	crossplattform durch Sprachen/Framework
+-> die mobilen Apps werden ..
+}}}
+
+{{{ 22
+%% Implementierung
+% Apps (allgemein)
+<- erstellt mit einer Software namens ..
+	mobile App (erstellt mit Phonegap) aus der Webapp
+
+	Bild erklaeren
+-> die eine App (namens YAVA) soll
+}}}
+
+{{{ 23
+%% Implementierung
+% Apps (YAVA)
+<- 2 Modi besitzen
+	Gruende! (Empfang im Supermarkt)
+	Warum nur diese Zuordnung? weil groesse!
+-> die andere App
+}}}
+
+{{{ 24
+%% Implementierung
+% Apps (YAVA)
+<- wird als Demonstrator fuers IRL entwickelt
+	IRL: Kooperation zwischen der Einzelhandelskette Globus und dem DFKI
+	Grund: da die Daten von Globus kommen und damit vertraulich zu behandeln
+	sind, ...
+	minimal weil ..
+-> Was ich nun habe ist ... und daher zum Schluss noch ...
+}}}
+
+{{{ 25
+%% Ausblick
+<- ... einen Ausblick, was noch alles gemacht werden kann:
+	Orientierungshilfe:
+			"Makromodus" (ausverkauft, alternativen, geschaeft?)
+			"Mikromodus" (in welchem Regal)
+	Augmented Reality:
+		3D-Warner, erweiterte Realitaet
+		Bsp: Google Glass
+	Dezentralisierung
+		Kostenersparnis (Server sind teuer)
+		bessere Verteilung der Daten
+		hoehere Erreichbarkeit (Serververteilung)
+	Pharmaka (Arzneistoffe) bzw. Arzneimittel (Medikamente)
+		nur wenige Daten ueber Veganitaet von Medikamenten vorliegend
+		tierversuchsfrei?
+	Einbindung von anderen Diensten:
+		Gesundheitsinformationen
+		-> Lebensmittelampeln/Naehrwertangaben
+-> Damit vielen Dank
+}}}
