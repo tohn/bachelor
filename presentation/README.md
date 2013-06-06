@@ -6,10 +6,10 @@ Ein bereits erstelltes PDF gibt es auf [meiner Website][web].
 
 ## Dateien
 
-* presentation.tex  
+* <code>presentation.tex</code>  
 	LaTeX-Datei. Baue das PDF mit:  
 	<code>pdflatex presentation.tex</code>
-* presentation.pdf.notes  
+* <code>presentation.pdf.notes</code>  
 	Meine Notizen. Diese Datei macht nur Sinn in Verwendung mit dem genialen Vortragsprogramm [slinp][] (und dem Windowmanager [dwm][]).  
 	Danke an [vain][]!
 
@@ -18,12 +18,12 @@ Ein bereits erstelltes PDF gibt es auf [meiner Website][web].
 Ich veroeffentliche nur Bilder, die ich selbst erstellt habe oder die
 zur freien Verfuegung stehen:
 
-* pics/4019339506035.svg  
+* <code>pics/4019339506035.svg</code>  
 	erstellt mit:  
 	<code>barcode -S -b "4019339506035" -o 4019339506035.svg</code>
-* pics/arrow.svg
-* pics/irl.png
-* pics/qm.png
+* <code>pics/arrow.svg</code>
+* <code>pics/irl.png</code>
+* <code>pics/qm.png</code>
 
 [web]: http://yhaupenthal.org/bachelor.htm
 [Bachelorseminars]: http://www.dfki.de/iui/bms/

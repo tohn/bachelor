@@ -1,0 +1,42 @@
+\ProvidesPackage{outline}
+
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{ae}
+\usepackage{url}
+\usepackage{lastpage}
+\usepackage{wrapfig}
+\usepackage{relsize}
+\usepackage{verbatim}
+\usepackage{microtype}
+
+% Language & Quotes
+% https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Anf%C3%BChrungszeichen#Anf.C3.BChrungszeichen_mit_dem_Paket_.22csquotes.22
+\usepackage[ngerman]{babel}
+
+% font
+% http://www.ctan.org/tex-archive/macros/latex/contrib/anyfontsize
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\linespread{1.05}  % Palatino needs more leading (space between lines)
+
+% url
+% https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_hyperref
+\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=black,
+citecolor=black,filecolor=black,urlcolor=black]{hyperref}
+
+%%% Packages End %%%
+
+% global formating
+\pagestyle{headings}
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.0ex plus 1.0ex minus 0.5ex}
+\setlength{\labelsep}{1em}
+
+% shortcuts
+% http://en.wikibooks.org/wiki/LaTeX/Boxes
+\newcommand{\name}{\mbox{YAVA}}
+\newcommand{\namefull}{\mbox{YAVA: Yet Another Vegan App}}
+\newcommand{\last}{(\today{})}

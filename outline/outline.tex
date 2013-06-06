@@ -1,0 +1,155 @@
+% http://www.kubieziel.de/computer/latex-tutorial.html
+\documentclass[a4paper,11pt,bibtotoc,headsepline]{scrartcl}
+\usepackage{outline} % include some stuff
+
+\title{\namefull}
+\subject{Outline\\
+Bachelor-/Master-Seminar}
+\author{Yannic Haupenthal (2522096)}
+\date{\today{}}
+
+% A written summary of no more than 3 pages in form of an extended
+% abstract as preparation for the actual bachelor thesis (see sample)
+% Reference: http://www.dfki.de/iui/bms/BA_MA_Outline.pdf
+
+\begin{document}
+
+\maketitle
+
+\pagestyle{plain}
+
+% Introduction
+\section{Einleitung}
+
+Als vegan lebender Mensch ist es nicht immer leicht im Supermarkt
+vegane Produkte direkt zu erkennen, da keine gesetzliche
+Deklarationspflicht besteht und somit die Produkte nicht
+entsprechend gekennzeichnet werden müssen.
+
+Daher müssen - wie auch z.\,B. bei Menschen mit Allergien - die Hersteller
+angeschrieben bzw. gefragt werden, ob ein Produkt tatsächlich vegan
+ist, da sich in diesem noch tierische Bestandteile befinden können,
+die aber nicht direkt ersichtlich sind, da z.\,B. Aroma auf
+pflanzlicher und tierischer Basis hergestellt werden kann, oder im
+Herstellungsprozess unvegane ``Produkte'' benutzt wurden, wie es
+z.\,B. bei der Klärung, d.\,h. der Herausfilterung von Trübstoffen in
+der Wein- oder Saftherstellung der Fall ist.
+
+\section{Grundlagen/Problemdefinition} % Basics/Problem definition
+
+Um einen gleichen Kenntnisstand für alle zu ermöglichen, werden im
+Folgenden kurz die grundlegenden Begriffe, die im weiteren Verlauf wichtig sind
+geklärt: Vegetarismus, Veganismus und Veganität.
+
+(Ovo-Lacto-)Vegetarismus bezeichnet eine Ernährungsweise, bei der keine
+Lebewesen verzehrt werden, die ``Produkte'' dieser wie Milch (Lacto),
+Eier (Ovo) und Honig aber schon.\\
+Der Veganismus ist im Gegensatz dazu eine Lebensweise, die den Verzehr
+aller tierischen ``Produkte'' ausschließt, und ebenso auch die Nutzung
+von Tieren ablehnt.\\
+Die Veganität bezeichnet, wie bzw. ob etwas vegan ist.
+
+Die in der Einleitung erwähnte nicht vorhandene Deklarationspflicht
+und das Problem, dass es bislang noch keine freie Produktdatenbank
+gibt, führt dazu, dass alle bisher gestellten Produktanfragen an den
+Hersteller bzgl. der Veganität eines Produktes in Foren bzw. Blogs
+gesammelt werden, dies allerdings nicht zentral.
+
+Die bisherige Vorgehensweise war dabei bei Menschen ohne Smartphone,
+vor dem Kauf im Internet nach der Veganität zu suchen, bzw. bei Menschen
+mit Smartphone während des Kaufs. Da die Suche nach der richtigen Produktanfrage
+ziemlich zeitaufwändig sein kann, ist das nicht die präferierte
+Herangehensweise.
+
+Diese Arbeit soll diese Probleme lösen, indem eine freie
+Produktdatenbank erstellt wird, die Produktanfragen zu den einzelnen
+Produkten und Zutaten enthält und als Anwendung für verschiedene
+Betriebssysteme verfügbar sein wird.\\
+Produkte werden dabei anhand ihres Barcodes (GTIN) unterschieden.
+
+\section{``Stand der Forschung''} % ``Research status''
+
+Bisher wurden vier verwandte wissenschaftliche und kommerzielle
+Arbeiten bzw. Dienste beschrieben und miteinander verglichen
+\cite{arfhhm08, bre07, barcoo, did}.\\
+Dabei wurde auf sechs Kriterien eingegangen, anhand derer sich diese
+Arbeit von den anderen unterscheidet.
+
+\section{Realisierung/Implementierung} % Realization/Implementation
+
+Die fertige Arbeit soll aus einer Webanwendung und zwei
+mobilen Anwendungen bestehen.
+
+Die Webanwendung soll dabei auf dem Webframework Ruby-on-Rails
+basieren, die plattformübergreifende Sprachen wie HTML5, CSS3 und
+JavaScript verwendet.\\
+Als Datenbank für alle Daten, die auch nachher - bis auf persönliche
+wie Name und E-Mailadresse - frei
+verfügbar sein sollen, soll PostgreSQL eingesetzt werden.
+
+Die zwei mobilen Anwendungen (Apps) - \name\ und IRL genannt - werden
+mit Phonegap erstellt, eine Software, die aus einer Codebasis und
+Plugins native mobile Apps für alle gängigen mobilen Betriebssystem
+erstellt.\\
+\name\ soll dabei zwei Modi beinhalten, ein Online- und ein
+Offline-Modus.\\
+Der Online-Modus nutzt die mobile Version der Webanwendung, während
+der Offline-Modus auf eine schlanke Website und eine SQLite-Datenbank
+setzt, welche nur die Zuordnung GTIN zu Veganität beinhaltet.\\
+Dies aus den einfachen Gründen, da nicht überall eine konstante
+Internetverbindung vorliegt und die App mit der kompletten Datenbank
+insgesamt viel zu groß wäre.\\
+Die App namens IRL soll nur einen Offline-Modus besitzen. Diese App
+wird dabei im Rahmen des Innovative Retail Laboratory (IRL)
+- eine Kooperation von der Einzelhandelskette Globus mit dem
+Deutschen Forschungszentrum für Künstliche Intelligenz (DFKI) -
+eingesetzt, da die Daten direkt von Globus kommen und nicht
+freigegeben werden dürfen. Die App wird dabei in dem IRL als
+Demonstrator verwendet \cite{sskk09}.\\
+Auch diese Variante basiert wie die Offline-Version von \name\ auf
+einer schlanken Website mit SQLite-Datenbank, die Name, Bild, GTIN und
+Veganität von Testdaten enthält.
+
+Daten können nur nach einer Anmeldung erstellt oder verändert
+werden.\\
+Diese Anmeldung soll auf dem OpenID-Verfahren basieren und Dienste
+wie Google, Facebook und Twitter unterstützen.\\
+Aktionen wie Eintragung oder Änderung von Daten geben Punkte, damit
+ein spielerischer Anreiz geschaffen wird, um die Datenbank schneller
+mit Produktdaten zu füllen.
+
+\section{Evaluation} % Evaluation (Auswertung/Feedback)
+
+Eine Evaluation findet im Rahmen dieser Arbeit nicht statt.\\
+Der Sinn der Bachelorarbeit lässt sich mit dem steigenden Wunsch der
+Konsument*innen nach mehr Transparenz
+nicht abstreiten, zudem es schon die genannten verwandten Arbeiten
+gibt, die anstatt auf ethische Hintergründe z.\,B. auf Allergien setzen
+und immer gefragter werden.\\
+Auch die Frage nach dem Sinn einer offenen Produktdatenbank, die zudem noch für
+andere Zwecke gebraucht werden kann, stellt sich in Hinsicht auf immer
+mehr Open Data Projekte nicht.
+
+\section{Änderungen seit Bachelorvortrag} % Changes since Bachelor-/Master-Talk
+
+Nach dem Bachelorvortrag am 23.05.2013 im Rahmen des Bachelorseminars
+wurden einige Fragen bzw. Anregungnen geäußert, die teilweise auch
+Änderungsvorschläge waren.
+
+Vorgeschlagen wurde u.\,a. ein sogenanntes ``Web-of-trust'', was dazu
+dienen soll, die Arbeit der Datenpflege zu erleichtern, indem sie auf
+mehrere Personen verteilt wird, die sich als vertrauenswürdig erwiesen
+haben, da sie z.\,B. schon viele Punkte gesammelt haben.
+
+Ebenfalls wurde die Frage gestellt, wie Synonyme oder Schreibfehler
+behandelt werden. Angedacht war, dass Synonyme für eine Zutat oder ein
+Produkt in der Datenbank gespeichert werden und Schreibfehler per
+Levenshtein-Distanz korrigiert werden \cite{dam64}.
+
+%\section{Literatur} % Literatur
+
+\bibliographystyle{plain}
+\renewcommand\refname{7 Literatur}
+\bibliography{outline}
+
+\end{document}
