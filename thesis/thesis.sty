@@ -1,0 +1,206 @@
+\ProvidesPackage{thesis}
+
+% http://homepage.ruhr-uni-bochum.de/georg.verweyen/pakete.html
+% http://web.science.mq.edu.au/~rdale/resources/writingnotes/latexstyle.html
+% http://web.science.mq.edu.au/~rdale/resources/writingnotes/declform.html
+
+% utf8 input
+\usepackage[utf8x]{inputenc}
+
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{ae}
+\usepackage{url}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{wrapfig}
+%\usepackage{amsmath}
+%\pagestyle{fancy}
+
+\usepackage{color}
+\usepackage{caption}
+
+\usepackage{tabularx} % http://en.wikibooks.org/wiki/LaTeX/Tables#The_tabularx_package
+
+% colored tables
+% http://tex.stackexchange.com/questions/5363/how-to-create-alternating-rows-in-a-table
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage[table,usenames,dvipsnames]{xcolor}    % loads also "colortbl"
+
+% http://stackoverflow.com/questions/722613/latex-centering-a-table-wider-than-the-text-column
+% allows for temporary adjustment of side margins
+\usepackage{chngpage}
+% provides filler text
+\usepackage{lipsum}
+% just makes the table prettier (see \toprule, \bottomrule, etc.
+% commands below)
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+%\usepackage{relsize}  % for \smaller, used in \NAME
+\usepackage{verbatim}  % for \verbatiminput, used in \code
+%\usepackage{microtype} % for textls (in \vapp)
+\usepackage{color} % for \vapp
+%\usepackage{hyperref}
+
+% http://texblog.org/2012/02/03/using-footnote-in-a-table/
+\usepackage{footnote} % tabular + footnote
+
+\usepackage{showidx}  % for index-checking
+
+\usepackage{makeidx}
+\makeindex
+
+% Language & Quotes
+% https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Anf%C3%BChrungszeichen#Anf.C3.BChrungszeichen_mit_dem_Paket_.22csquotes.22
+% support for german (neue deutsche rechtschreibung) specific titles and translations
+\usepackage[ngerman]{babel}
+%\usepackage[babel,german=quotes]{csquotes}
+
+% multiple bibs (change make.sh if you add/edit/remove sth. here)
+\usepackage{multibib}
+\newcites{web}{Websites}
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Localizing_bibliography_appearance
+%\usepackage[fixlanguage]{babelbib}
+%\selectbiblanguage{ngerman}
+% http://tex.stackexchange.com/questions/68484
+\selectlanguage{ngerman}
+
+% font
+% http://www.ctan.org/tex-archive/macros/latex/contrib/anyfontsize
+\usepackage[T1]{fontenc}
+%\usepackage[sc,osf]{mathpazo}
+\linespread{1.05}  % Palatino needs more leading (space between lines)
+
+% url
+% https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_hyperref
+% clickable links, no border, colors
+%\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=black,
+%citecolor=black,filecolor=black,urlcolor=blue]{hyperref} % blue link!
+\usepackage[pdfborder={0 0 0},colorlinks=true,linkcolor=black,
+citecolor=black,filecolor=black,urlcolor=black,pdftitle={YAVA: Yet
+Another Vegan App},pdfauthor={Yannic
+Haupenthal},pdfkeywords={vegan}{app}]{hyperref}
+%\hypersetup{pdftex=false,citecolor=white,pagecolor=white,
+%colorlinks=false, breaklinks=true, linkcolor=darkblue,
+%menucolor=darkblue, pagecolor=darkblue, urlcolor=darkblue} % ?
+
+\usepackage{ulem} % http://mirror.informatik.uni-mannheim.de/pub/mirrors/tex-archive/macros/latex/contrib/ulem/ulem.pdf
+\usepackage{paralist} % http://www.ctex.org/documents/packages/table/paralist.pdf
+\usepackage[printonlyused,withpage]{acronym} % ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/acronym/acronym.pdf
+\usepackage{subcaption} % http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
+
+% texttt + textbf
+% http://www.macfreek.nl/memory/LaTeX_Bold_Typewriter_Font
+\DeclareFontFamily{T1}{lmtt}{} 
+\DeclareFontShape{T1}{lmtt}{m}{n}{<-> ec-lmtl10}{} 
+\DeclareFontShape{T1}{lmtt}{m}{\itdefault}{<-> ec-lmtlo10}{} 
+\DeclareFontShape{T1}{lmtt}{\bfdefault}{n}{<-> ec-lmtk10}{} 
+\DeclareFontShape{T1}{lmtt}{\bfdefault}{\itdefault}{<-> ec-lmtko10}{} 
+\usepackage{courier}
+
+% Glossaries
+%\usepackage[xindy,toc]{glossaries}
+%\GlsSetXdyCodePage{duden-utf8}
+
+%%\setmainlanguage{german}
+%%\setotherlanguage[variant=american]{english}
+%\renewcommand*{\glspostdescription}{}
+%\renewcommand*{\glossaryname}{Glossar}
+%\deftranslation{Glossary}{Glossar}
+% http://tex.stackexchange.com/questions/83312/dotted-line-between-glossary-description-and-page-number
+%\renewcommand*\glspostdescription{\dotfill}
+
+%\makeglossaries
+
+% float warning fix
+% (http://www.golatex.de/koma-script-warnung-in-verbindung-mit-listings-package-t2058.html)
+\usepackage{scrhack}
+\usepackage{floatrow}
+
+% Unicode: tick and x-mark
+% http://tex.stackexchange.com/questions/42619/x-mark-to-match-checkmark
+% http://tex.stackexchange.com/questions/21598/how-to-color-math-symbols
+\usepackage{pifont}
+\newcommand{\cmark}{{\color{ForestGreen}{\ding{51}}}}%
+\newcommand{\xmark}{{\color{red}{\ding{55}}}}%
+
+% Rotated headers in tables:
+% http://tex.stackexchange.com/questions/32683
+\usepackage{adjustbox}
+\usepackage{array}
+\newcolumntype{R}[2]{%
+	>{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+		l%
+	<{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{45}{1em}}}% no optional argument here, please!
+
+% custom floats
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Custom_floats
+\usepackage{float}
+\floatstyle{plain}
+\newfloat{computation}{thp}{loc}[chapter]
+\floatname{computation}{Berechnung}
+
+% remove spaces between items in list
+% http://stackoverflow.com/questions/3275622
+\usepackage{enumitem}
+
+% Pseudocode
+\usepackage[german,linesnumbered,algochapter,boxed]{algorithm2e}
+
+% Rotated figures
+% http://tex.stackexchange.com/questions/101645
+\usepackage{rotating}
+
+% https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Silbentrennung
+\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}
+
+%%% Packages End %%%
+
+% color
+\definecolor{vgreen}{RGB}{141,199,62}
+\definecolor{vgrey}{RGB}{148,150,152}
+\definecolor{listingcolor}{gray}{0.85}
+\definecolor{dkgreen}{rgb}{0,0.3,0}
+\definecolor{gray}{rgb}{0.7,0.7,0.7}
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+\definecolor{mauve}{rgb}{0.12,0,0.12} 
+\definecolor{darkblue}{rgb}{0,0,.4}
+\definecolor{white}{rgb}{1,1,1}
+
+% global formating
+\pagestyle{headings}
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.0ex plus 1.0ex minus 0.5ex}
+\setlength{\labelsep}{1em}
+%\let\OLDquote\quote
+%\renewcommand{\quote}{\OLDquote\small}  % blockquotes in smaller size
+
+% index
+\newcommand{\ind}[1]{#1\index{#1}}
+
+% shortcuts
+% http://en.wikibooks.org/wiki/LaTeX/Boxes
+\newcommand{\name}{\mbox{YAVA}\ } % box+grey?
+\newcommand{\namefull}{\mbox{YAVA: Yet Another Vegan App}} % box+grey?
+\newcommand{\TODO}{\color{red}{TODO}}
+\newcommand{\last}{(\today{})} % TODO: update me
+% http://tex.stackexchange.com/questions/36030/how-to-make-a-single-word-look-as-some-code
+\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\picy}{\includegraphics[scale=0.5]{pics/glyphicons_206_ok_2.png}}
+%\newcommand{\picn}{\includegraphics[scale=0.5]{pics/glyphicons_207_remove_2.png}}
+
+\newcommand*{\dateandsignature}[1]{%
+%	Saarbrücken, \today{}%
+	\par\noindent\makebox[2.3in]{\hrulefill} \hfill\makebox[2.3in]{\hrulefill}%
+	\par\noindent\makebox[2.4in]{(Ort/Place, Datum/Date)} \hfill\makebox[2.4in]{(Unterschrift/Signature)}%
+}%
+
+% http://www.mrunix.de/forums/showthread.php?t=66436
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000

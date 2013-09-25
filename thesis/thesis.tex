@@ -1,0 +1,76 @@
+% http://www.kubieziel.de/computer/latex-tutorial.html
+\documentclass[a4paper,11pt,bibliography=totoc,headsepline,twoside,openright]{scrreprt}
+\usepackage{thesis} % include some stuff
+
+\title{\namefull}
+\author{Yannic Haupenthal}
+\date{\today{}}
+\subject{\name}
+
+\begin{document}
+
+\pagenumbering{Roman}
+\pagestyle{empty}
+
+%% Title
+\include{tex/title}
+
+%% Declaration
+\include{tex/declaration}
+
+%% Abstract
+\include{tex/abstract}
+
+%% Quote
+\include{tex/quote}
+
+%% Acknowledgements
+\include{tex/acknowledgements}
+
+%% Dedication
+\include{tex/dedication}
+
+%% Table of contents
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+%% Introduction
+\include{tex/introduction}
+%% Related Work
+\include{tex/related_work}
+%% Concept
+\include{tex/concept}
+%% Implementation
+\include{tex/implementation}
+%% Discussion + Evaluation
+\include{tex/discussion-evaluation}
+%% Summary + Future work
+\include{tex/summary-future_work}
+
+%\clearpage
+\cleardoublepage
+\setcounter{page}{0}
+\pagenumbering{roman}
+\appendix
+%% Abbildungsverzeichnis
+\listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+%% Tabellenverzeichnis
+\listoftables
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+%% Berechnungsverzeichnis
+\listofalgorithms
+\addcontentsline{toc}{chapter}{Liste der Algorithmen}
+%% Abkürzungsverzeichnis
+\include{tex/acronyms}
+%% Anhang
+\include{tex/appendix}
+
+% References
+\clearpage
+\pagestyle{plain}
+\bibliographystyle{alphadin}
+\bibliography{bib/thesis}
+\bibliographystyleweb{gerplain}
+\bibliographyweb{bib/web}
+
+\end{document}
