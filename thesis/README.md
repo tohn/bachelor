@@ -6,7 +6,7 @@ Ein bereits erstelltes PDF gibt es auf [meiner Website][web].
 
 ## Dateien
 
-* <code>thesis.tex</code>, <code>thesis.sty</code>, <code>tex/*</cpde>  
+* <code>thesis.tex</code>, <code>thesis.sty</code>, <code>tex/*</code>  
 	LaTeX-Dateien. Baue das PDF mit:  
 	<code>./make.sh thesis y</code>
 * <code>pics/*</code>, <code>misc/*</code>, <code>misc/r/*</code>  
